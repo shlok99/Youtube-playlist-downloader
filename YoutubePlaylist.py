@@ -8,7 +8,7 @@ from selenium import webdriver
 start_time = time.time()
 
 try:
-    url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLeI9sYpZVfZVl4B665SV5OzqJ3z4WARDr&key=AIzaSyCdSQ6WHMBZZdIUTfl5dJYGg1CaM9NZdNk'
+    url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLeI9sYpZVfZVl4B665SV5OzqJ3z4WARDr&key={YOUR API KEY}'
     headers = {}
     headers ['User-Agent'] = "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"
     req = urllib.request.Request(url, headers = headers)
@@ -18,7 +18,7 @@ try:
     respData = resp.read()
     nextPageToken = re.findall('"nextPageToken": "(.*?)"', str(respData))
     for page in range(totalPages):
-        url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&pageToken='+ str(nextPageToken[page]) + '&playlistId=PLeI9sYpZVfZVl4B665SV5OzqJ3z4WARDr&key=AIzaSyCdSQ6WHMBZZdIUTfl5dJYGg1CaM9NZdNk'
+        url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&pageToken='+ str(nextPageToken[page]) + '&playlistId=PLeI9sYpZVfZVl4B665SV5OzqJ3z4WARDr&key={YOUR API KEY}'
         headers = {}
         headers ['User-Agent'] = "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"
         req = urllib.request.Request(url, headers = headers)
