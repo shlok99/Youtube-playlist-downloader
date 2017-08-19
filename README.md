@@ -22,3 +22,11 @@ To install the geckodriver https://github.com/mozilla/geckodriver/releases
 # Version 1.0  
 Can download approximately 60% of the videos in a playlist
 
+# Version 2.0
+Added error handling of alerts that would stop flow of downloads  
+Increased user usability  
+Can download approximately 90% of videos in a playlist
+
+# Goals
+Be able to control server overload for file downloads
+Cross check titles in the playlist to titles downloaded to determine which songs are missing
