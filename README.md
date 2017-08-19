@@ -18,3 +18,7 @@ To install the geckodriver https://github.com/mozilla/geckodriver/releases
 6. Input the key into API key
 7. Find the total number of videos in the playlist and insert it into the totalVideos variable
 8. Run the file
+
+#Version 1.0
+Can download approximately 60% of the videos in a playlist
+
