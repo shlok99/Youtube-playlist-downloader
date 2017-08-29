@@ -27,6 +27,10 @@ Added error handling of alerts that would stop flow of downloads
 Increased user usability  
 Can download approximately 90% of videos in a playlist
 
+# Version 3.0
+Added cross checking with files downloaded to all the youtube playlist 
+Increased user usability 
+
 # Goals
 Be able to control server overload for file downloads
-Cross check titles in the playlist to titles downloaded to determine which songs are missing
+
