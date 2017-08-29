@@ -28,7 +28,7 @@ Increased user usability
 Can download approximately 90% of videos in a playlist
 
 # Version 3.0
-Added cross checking with files downloaded to all the youtube playlist 
+Added cross checking with files downloaded to all the youtube playlist  
 Increased user usability 
 
 # Goals
