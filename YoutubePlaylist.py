@@ -10,9 +10,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 start_time = time.time()
-playlistId = '' #Found in the url of the playlist
-totalVideos = #input integer here for total # of videos in the playlist
-APIkey = '' #input api key from youtube data analyatics
+playlistId = '' #Found on the link of the youtube playlist
+totalVideos = #Integer of total videos in the playlist
+APIkey = '' #API Key for Youtube Data Analytics 
 try:
     url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId='+playlistId + '&key=' + APIkey
     headers = {}
@@ -50,11 +50,10 @@ fp = webdriver.FirefoxProfile(r"C:\Users\Shlok Khandelwal\AppData\Roaming\Mozill
 driver = webdriver.Firefox(executable_path=r"C:\Users\Shlok Khandelwal\Desktop\geckodriver.exe", firefox_profile=fp)
 driver.set_page_load_timeout(60)
 videoCount = 0
-songsToDelete = []
 
-for delete in songsToDelete:
-    del dictionary [delete]
-while(len(dictionary)> 1):
+
+while(len(dictionary)> 0):
+    songsToDelete = []
     for eachLink in dictionary.values():
         try:
             alert = driver.switch_to_alert()
@@ -68,14 +67,15 @@ while(len(dictionary)> 1):
             dlElement.click()
         except Exception as e:
             print(e)
-        songsDownloaded = os.listdir(r"Downloads")
-        for titles in songsDownloaded:
-            for downloaded in dictionary.keys():
-                if(str(titles) == str(downloaded)):
-                    songsToDelete.insert(len(songsToDelete), titles)
-                    print("Deleted")
-        for delete in songsToDelete:
-            del dictionary [delete]
+    time.sleep(10)
+    songsDownloaded = os.listdir(r"Downloads")
+    for titles in songsDownloaded:
+        for downloaded in dictionary.keys():
+            if(str(titles) == str(downloaded)):
+                songsToDelete.insert(len(songsToDelete), titles)
+                print("Deleted")
+    for delete in songsToDelete:
+        del dictionary [delete]
 print(dictionary)
-print(len(songsDownloaded)+ len(dictionary))
+print(len(songsDownloaded)+ len(dictionary)-1)
 print(str(time.time()-start_time))
